@@ -23,7 +23,7 @@ p{margin:0 0 1em}a{color:var(--blue)}img{max-width:100%;height:auto;display:bloc
 .wrap{max-width:1180px;margin:0 auto;padding:0 20px}
 .eyebrow{display:inline-block;font-weight:700;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
 .lead{font-size:1.12rem;color:var(--muted)}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 24px;border-radius:10px;font-weight:700;text-decoration:none;border:2px solid transparent;cursor:pointer;font-size:1rem;transition:.18s;font-family:inherit;line-height:1.2}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 24px;white-space:nowrap;border-radius:10px;font-weight:700;text-decoration:none;border:2px solid transparent;cursor:pointer;font-size:1rem;transition:.18s;font-family:inherit;line-height:1.2}
 .btn-red{background:var(--red);color:#fff}.btn-red:hover{background:var(--red2);transform:translateY(-1px)}
 .btn-blue{background:var(--blue);color:#fff}.btn-blue:hover{background:var(--blue2);transform:translateY(-1px)}
 .btn-white{background:#fff;color:var(--navy)}.btn-white:hover{background:var(--sky)}
@@ -32,23 +32,24 @@ p{margin:0 0 1em}a{color:var(--blue)}img{max-width:100%;height:auto;display:bloc
 .ico{width:1.2em;height:1.2em;fill:currentColor;flex:none}
 /* top bar + header */
 .topbar{background:var(--navy);color:#cfe0ff;font-size:.86rem}
-.topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:36px}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:36px;max-width:1280px}
 .topbar a{color:#fff;text-decoration:none;font-weight:600}
 .topbar .left{display:flex;gap:18px;align-items:center}
 header.site{position:sticky;top:0;z-index:50;background:#fff;box-shadow:0 2px 14px rgba(10,35,66,.08)}
-header.site .wrap{display:flex;align-items:center;gap:20px;min-height:76px}
+header.site .wrap{display:flex;align-items:center;gap:16px;height:74px;max-width:1280px}
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--navy)}
 .logo .mark{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--navy),var(--blue));display:grid;place-items:center;color:#fff;font-family:Montserrat;font-weight:900;font-size:1.15rem;letter-spacing:-.04em}
-.logo .name{font-family:Montserrat;font-weight:900;font-size:1.25rem;line-height:1;letter-spacing:-.02em}
-.logo .name small{display:block;font-size:.62rem;font-weight:700;letter-spacing:.16em;color:var(--red);margin-top:3px}
-nav.main{margin-left:auto;display:flex;gap:4px;align-items:center}
-nav.main a{color:var(--ink);text-decoration:none;font-weight:600;padding:10px 12px;border-radius:8px;font-size:.95rem}
+.logo .name{font-family:Montserrat;font-weight:900;font-size:1.2rem;line-height:1;letter-spacing:-.02em;white-space:nowrap}
+.logo .name small{display:block;font-size:.58rem;font-weight:700;letter-spacing:.14em;color:var(--red);margin-top:3px;white-space:nowrap}
+nav.main{margin-left:auto;display:flex;gap:2px;align-items:center}
+nav.main a{color:var(--ink);text-decoration:none;font-weight:600;padding:9px 11px;border-radius:8px;font-size:.93rem;white-space:nowrap}
 nav.main a:hover,nav.main a.active{background:var(--sky);color:var(--blue2)}
-.hdr-cta{display:flex;align-items:center;gap:10px}
+.hdr-cta{display:flex;align-items:center;gap:10px;flex:none}
+.hdr-cta .btn{padding:12px 18px}
 .hdr-phone{display:flex;flex-direction:column;align-items:flex-end;text-decoration:none;color:var(--navy);line-height:1.1}
-.hdr-phone small{font-size:.7rem;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.08em}
-.hdr-phone b{font-family:Montserrat;font-size:1.2rem;font-weight:800;white-space:nowrap}
-.lang{border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:6px 12px;font-weight:700;font-size:.8rem;cursor:pointer;color:var(--navy);font-family:inherit}
+.hdr-phone small{font-size:.66rem;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.08em;white-space:nowrap}
+.hdr-phone b{font-family:Montserrat;font-size:1.15rem;font-weight:800;white-space:nowrap}
+.lang{border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:6px 12px;font-weight:700;font-size:.8rem;cursor:pointer;color:var(--navy);font-family:inherit;white-space:nowrap}
 .lang:hover{border-color:var(--blue)}
 .burger{display:none;background:none;border:0;width:44px;height:44px;cursor:pointer;color:var(--navy)}
 .burger .ico{width:28px;height:28px}
@@ -138,9 +139,10 @@ footer.site .bottom{border-top:1px solid rgba(255,255,255,.1);margin-top:36px;pa
 .mbar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:60;background:#fff;border-top:1px solid var(--line);padding:10px 12px;gap:10px;box-shadow:0 -6px 20px rgba(10,35,66,.12)}
 .mbar .btn{flex:1;padding:13px 10px}
 /* responsive */
-@media(max-width:1180px){nav.main a{padding:8px 7px;font-size:.86rem}.hdr-cta .btn{display:none}.logo .name{font-size:1.05rem}.hdr-phone b{font-size:1.05rem}header.site .wrap{gap:12px}}
+@media(max-width:1240px){.hdr-cta .btn{display:none}}
+@media(max-width:1100px){nav.main a{padding:8px 8px;font-size:.88rem}.logo .name{font-size:1.05rem}.hdr-phone b{font-size:1.05rem}header.site .wrap{gap:10px}}
 @media(max-width:1000px){.hero .wrap{grid-template-columns:1fr;gap:34px;padding:52px 20px}.trust .wrap{grid-template-columns:1fr 1fr}.grid3{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr}.content{grid-template-columns:1fr}.side{position:static}footer.site .cols{grid-template-columns:1fr 1fr}.cta-final .wrap{grid-template-columns:1fr}}
-@media(max-width:980px){nav.main{display:none;position:absolute;top:76px;left:0;right:0;background:#fff;flex-direction:column;align-items:stretch;padding:10px 16px 16px;box-shadow:0 14px 30px rgba(10,35,66,.15)}nav.main.open{display:flex}nav.main a{padding:13px 10px;border-bottom:1px solid var(--line)}.burger{display:block}.hdr-phone{display:none}.topbar .left span.sec{display:none}}
+@media(max-width:980px){nav.main{display:none;position:absolute;top:74px;left:0;right:0;background:#fff;flex-direction:column;align-items:stretch;padding:10px 16px 16px;box-shadow:0 14px 30px rgba(10,35,66,.15)}nav.main.open{display:flex}nav.main a{padding:13px 10px;border-bottom:1px solid var(--line)}.burger{display:block}.hdr-phone{display:none}.topbar .left span.sec{display:none}}
 @media(max-width:640px){.grid3,.grid2,.trust .wrap,.cities,footer.site .cols{grid-template-columns:1fr}.form-card .row{grid-template-columns:1fr}section{padding:52px 0}.mbar{display:flex}.hdr-cta .btn{display:none}.topbar .wrap{justify-content:center}.topbar .left{display:none}}
 """
 
@@ -320,7 +322,7 @@ def lead_form(compact=False, title=("Get Your Free Quote","Pida su Cotización G
   </form></div>'''
 
 def header(active=""):
-    links = [("/", "Home","Inicio"), ("/services/ac-installation/","New Systems","Sistemas Nuevos"), ("/services/mini-splits/","Mini Splits","Mini Splits"), ("/services/heating/","Heating","Calefacción"), ("/services/commercial/","Commercial","Comercial"), ("/service-area/","Service Area","Área de Servicio"), ("/about/","About","Nosotros"), ("/contact/","Contact","Contacto")]
+    links = [("/services/ac-installation/","New A/C","A/C Nuevo"), ("/services/ac-replacement/","Replacement","Reemplazo"), ("/services/mini-splits/","Mini Splits","Mini Splits"), ("/services/heating/","Heating","Calefacción"), ("/services/commercial/","Commercial","Comercial"), ("/service-area/","Areas","Áreas"), ("/about/","About","Nosotros"), ("/contact/","Contact","Contacto")]
     nav = "".join(f'<a href="{h}"{" class=\"active\"" if h==active else ""}>{t(en,es)}</a>' for h,en,es in links)
     return f'''<div class="topbar"><div class="wrap"><div class="left"><span>{t("Serving the Rio Grande Valley, Mission to Brownsville","Sirviendo al Valle del Río Grande, de Mission a Brownsville")}</span><span class="sec">&bull;</span><span class="sec">{t("Residential &amp; Commercial","Residencial y Comercial")}</span><span class="sec">&bull;</span><span class="sec">Se habla español</span></div><a href="tel:{TEL}">{t("Call","Llame")} {PHONE}</a></div></div>
 <header class="site"><div class="wrap">
