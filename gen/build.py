@@ -47,7 +47,7 @@ nav.main a:hover,nav.main a.active{background:var(--sky);color:var(--blue2)}
 .hdr-cta{display:flex;align-items:center;gap:10px}
 .hdr-phone{display:flex;flex-direction:column;align-items:flex-end;text-decoration:none;color:var(--navy);line-height:1.1}
 .hdr-phone small{font-size:.7rem;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.08em}
-.hdr-phone b{font-family:Montserrat;font-size:1.2rem;font-weight:800}
+.hdr-phone b{font-family:Montserrat;font-size:1.2rem;font-weight:800;white-space:nowrap}
 .lang{border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:6px 12px;font-weight:700;font-size:.8rem;cursor:pointer;color:var(--navy);font-family:inherit}
 .lang:hover{border-color:var(--blue)}
 .burger{display:none;background:none;border:0;width:44px;height:44px;cursor:pointer;color:var(--navy)}
