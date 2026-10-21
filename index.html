@@ -28,6 +28,13 @@ header .wrap { display: flex; align-items: center; justify-content: space-betwee
 .hero .sub { color: #cfe0ff; font-size: 16px; }
 .hero .badge { display: inline-block; background: #ffd54a; color: #0b2a5b; font-weight: bold; padding: 8px 16px; border-radius: 4px; margin-top: 16px; }
 
+.photos { background: #fff; padding: 28px 0 8px; }
+.photos .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.photos figure { margin: 0; }
+.photos img { width: 100%; height: auto; display: block; border: 1px solid #dde3ec; border-radius: 4px; }
+.photos figcaption { font-size: 14px; color: #555; margin-top: 6px; text-align: center; }
+.credit { font-size: 11px; color: #7f93b8; margin-top: 8px; }
+@media (max-width: 600px) { .photos .wrap { grid-template-columns: 1fr; } }
 section { padding: 40px 0; }
 section h2 { color: #0b2a5b; font-size: 26px; margin: 0 0 6px; border-left: 6px solid #c8102e; padding-left: 12px; }
 section h2 small { display: block; font-size: 14px; color: #666; font-weight: normal; }
@@ -84,6 +91,13 @@ footer a { color: #ffd54a; }
     <p>Installed by a local company you can trust. <em>Obten un nuevo sistema de aire acondicionado.</em></p>
     <p class="sub">Residential &amp; Commercial &bull; Residencial y Comercial</p>
     <div class="badge">Ask about our CASH PRICE &bull; Pregunte por nuestro precio de contado</div>
+  </div>
+</div>
+
+<div class="photos">
+  <div class="wrap">
+    <figure><img src="images/ac-install.jpg" alt="Technician installing a central air conditioning condenser unit" width="1000" height="666"><figcaption>New A/C system installation &bull; Instalacion de sistema nuevo</figcaption></figure>
+    <figure><img src="images/mini-split.jpg" alt="Mini split air conditioner outdoor unit" width="1000" height="666"><figcaption>Mini splits installed &bull; Tambien instalamos mini splits</figcaption></figure>
   </div>
 </div>
 
@@ -177,6 +191,7 @@ footer a { color: #ffd54a; }
   <div class="wrap">
     &copy; 2026 JR Refrigeration &bull; Air Conditioning &amp; Heating Services &bull; Rio Grande Valley, Texas<br>
     <a href="tel:+12109460246">(210) 946-0246</a>
+    <div class="credit">Photos: U.S. Air Force (public domain); "Mini-Split AC" by &lt;a rel=&quot;nofollow&quot; class=&quot;external text&quot; href=&quot;https://www.fl, CC BY 2.0 via Wikimedia Commons</div>
   </div>
 </footer>
 
