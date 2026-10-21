@@ -345,7 +345,7 @@ def footer():
 <div class="bottom"><span>&copy; {YEAR} JR Refrigeration &bull; Air Conditioning &amp; Heating Services &bull; Rio Grande Valley, TX</span><span>Photos: U.S. Air Force (public domain); "Mini-Split AC" by HelpAtMyHome, CC BY 2.0; Unsplash</span></div>
 </div></footer>
 <div class="mbar"><a class="btn btn-blue" href="tel:{TEL}">{I["phone"]} {t("Call Now","Llamar")}</a><a class="btn btn-red" href="/contact/">{t("Free Quote","Cotización")}</a></div>
-<script src="/js/main.js" defer></script>'''
+<script src="/js/main.js?v={VER}" defer></script>'''
 
 def page(title, desc, body, path="/", active="/", schema=True, og_img="images/hero.jpg"):
     ld = ""
@@ -359,7 +359,7 @@ def page(title, desc, body, path="/", active="/", schema=True, og_img="images/he
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/style.css">{ld}
+<link rel="stylesheet" href="/css/style.css?v={VER}">{ld}
 </head><body>
 {header(active)}
 <main>{body}</main>
@@ -575,6 +575,9 @@ def notfound_page():
     return page("Not Found | JR Refrigeration", "Page not found.", body, "/404.html", "", schema=False)
 
 FAVICON = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#0a2342"/><text x="32" y="43" text-anchor="middle" font-family="Montserrat,Arial,sans-serif" font-weight="900" font-size="30" fill="#fff">JR</text></svg>'
+
+import hashlib
+VER = hashlib.md5((CSS+JS).encode()).hexdigest()[:8]
 
 def write(rel, content):
     p = os.path.join(ROOT, rel); os.makedirs(os.path.dirname(p), exist_ok=True)
