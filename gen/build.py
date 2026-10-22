@@ -5,6 +5,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DOMAIN = "https://jrrefrigerationac.com"
 PHONE = "(210) 946-0246"; TEL = "+12109460246"
 FORM_EMAIL = "gr3742780@gmail.com"
+OG_IMG = "images/og-share.jpg"
 YEAR = datetime.date.today().year
 
 def t(en, es=None):
@@ -350,13 +351,31 @@ def footer():
 def page(title, desc, body, path="/", active="/", schema=True, og_img="images/hero.jpg"):
     ld = ""
     if schema:
-        ld = f'''<script type="application/ld+json">{{"@context":"https://schema.org","@type":"HVACBusiness","name":"JR Refrigeration","alternateName":"JR Refrigeration Air Conditioning & Heating Services","url":"{DOMAIN}/","telephone":"{TEL}","image":"{DOMAIN}/{og_img}","priceRange":"$$","areaServed":[{",".join(f'{{"@type":"City","name":"{c}, TX"}}' for c in CITIES[:15])}],"address":{{"@type":"PostalAddress","addressRegion":"TX","addressCountry":"US"}},"knowsLanguage":["en","es"],"makesOffer":[{",".join(f'{{"@type":"Offer","itemOffered":{{"@type":"Service","name":"{s["title"][0]}","url":"{DOMAIN}/services/{s["slug"]}/"}}}}' for s in SERVICES)}]}}</script>'''
+        ld = f'''<script type="application/ld+json">{{"@context":"https://schema.org","@type":"HVACBusiness","name":"JR Refrigeration","alternateName":"JR Refrigeration Air Conditioning & Heating Services","url":"{DOMAIN}/","telephone":"{TEL}","image":"{DOMAIN}/{OG_IMG}","logo":"{DOMAIN}/images/icon-512.png","priceRange":"$$","areaServed":[{",".join(f'{{"@type":"City","name":"{c}, TX"}}' for c in CITIES[:15])}],"address":{{"@type":"PostalAddress","addressRegion":"TX","addressCountry":"US"}},"knowsLanguage":["en","es"],"makesOffer":[{",".join(f'{{"@type":"Offer","itemOffered":{{"@type":"Service","name":"{s["title"][0]}","url":"{DOMAIN}/services/{s["slug"]}/"}}}}' for s in SERVICES)}]}}</script>'''
     return f'''<!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{html.escape(title)}</title><meta name="description" content="{html.escape(desc, quote=True)}">
 <link rel="canonical" href="{DOMAIN}{path}">
-<meta property="og:title" content="{html.escape(title, quote=True)}"><meta property="og:description" content="{html.escape(desc, quote=True)}"><meta property="og:image" content="{DOMAIN}/{og_img}"><meta property="og:url" content="{DOMAIN}{path}"><meta property="og:type" content="website">
+<meta name="theme-color" content="#0a2342">
+<meta property="og:site_name" content="JR Refrigeration">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{DOMAIN}{path}">
+<meta property="og:title" content="{html.escape(title, quote=True)}">
+<meta property="og:description" content="{html.escape(desc, quote=True)}">
+<meta property="og:image" content="{DOMAIN}/{OG_IMG}">
+<meta property="og:image:secure_url" content="{DOMAIN}/{OG_IMG}">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="JR Refrigeration - Air Conditioning &amp; Heating - Rio Grande Valley, TX - Call (210) 946-0246">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="es_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{html.escape(title, quote=True)}">
+<meta name="twitter:description" content="{html.escape(desc, quote=True)}">
+<meta name="twitter:image" content="{DOMAIN}/{OG_IMG}">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/style.css?v={VER}">{ld}
